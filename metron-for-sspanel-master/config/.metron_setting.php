@@ -31,8 +31,12 @@ $_MT['pop_time']     = 1;                          // 每次弹出间隔多久�
 $_MT['pop_text'] = '
 <p class="text-danger font-weight-bold" font size="5" color="FF66FF">充值不到账请联系 1285622204或到qq群找群主处理</p>
 <p class="text-muted font-weight-bold  " font size="8" color="red">
-<a href="https://jq.qq.com/?_wv=1027&k=e0VCCC3w" target=”_blank”>请加企鹅群</a> 
+<a href="https://jq.qq.com/?_wv=1027&k=e0VCCC3w" target="_blank">请加企鹅群</a> 
 </p>
+<p class="text-muted font-weight-bold  " font size="8" color="pink">
+<a href="https://wj.qq.com/s2/6939291/3640/"  target="_blank">问卷调查</a>
+</p>
+
 <p class="text-muted font-weight-bold  " font size="10" color="red">
 <a href="https://fakaya.me/" target=”_blank”>微信充值请点这</a> 
 </p>
