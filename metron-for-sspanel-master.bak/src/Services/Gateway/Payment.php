@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Created by PhpStorm.
  * User: tonyzou
@@ -10,50 +9,45 @@
 namespace App\Services;
 
 use App\Services\Gateway\{
-    AopF2F,
-    Codepay,
-    PaymentWall,
-    ChenPay,
-    SPay,
-    PAYJS,
-    YftPay,
-    BitPayX,
-    TomatoPay,
-    IDtPay,
-    MetronPay,
-    flyfoxpay
+    AopF2F, Codepay, DoiAMPay, PaymentWall, ChenPay, PcexPay, TrimePay, BitPayX, TomatoPay, flyfoxpay, PAYJS, F2Fpay_PAYJS, StripePay, Payssion, YftPay, MalioPay, IDtPay
 };
 
 class Payment
 {
     public static function getClient()
     {
-        $method = $_ENV['payment_system'];
+        $method = Config::get('payment_system');
         switch ($method) {
             case ('codepay'):
                 return new Codepay();
             case ('paymentwall'):
                 return new PaymentWall();
-            case ('spay'):
-                return new SPay();
+            case ('PcexPay'):
+                return new PcexPay();
             case ('f2fpay'):
                 return new AopF2F();
             case ('chenAlipay'):
                 return new ChenPay();
-            case ('payjs'):
-                return new PAYJS($_ENV['payjs_key']);
-            case ('yftpay'):
-                return new YftPay();
             case ('bitpayx'):
-                return new BitPayX($_ENV['bitpay_secret']);
-            case ("tomatopay"):
+                return new BitPayX(Config::get('bitpay_secret'));
+            case("tomatopay"):
                 return new TomatoPay();
-            case ("idtpay"):
-                return new IDtPay();
-            case("metronpay"):
-                return new MetronPay();
             case("flyfoxpay"):
                 return new flyfoxpay();
+            case ('payjs'):
+                return new PAYJS(Config::get('payjs_key'));
+            case ('f2fpay_payjs'):
+                return new F2Fpay_PAYJS();
+            case ('stripe'):
+                return new StripePay();
+            case ('payssion'):
+                return new Payssion();
+            case ('yftpay'):
+                return new YftPay();
+            case ('malio'):
+                return new MalioPay();
+            case ("idtpay"):
+                return new IDtPay();
             default:
                 return null;
         }

@@ -81,7 +81,7 @@ class PcexPay extends AbstractPayment
         $alipay_config['input_charset'] = strtolower('utf-8');  //字符编码格式 目前支持 gbk 或 utf-8
         $alipay_config['transport']     = $this->isHTTPS() ? 'https' : 'http';  //访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
         $url = ($this->isHTTPS() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'];
-        $alipay_config['apiurl']  = 'https://forwe.co/';     //支付API地址
+        $alipay_config['apiurl']  = 'https://smpay.io/';     //支付API地址
 
         $parameter = array(
                 "pid"           => trim($alipay_config['partner']),
@@ -117,7 +117,7 @@ class PcexPay extends AbstractPayment
         $url = ($this->isHTTPS() ? 'https://' : 'http://') . $_SERVER['HTTP_HOST'];
         
         //支付API地址
-        $alipay_config['apiurl']  = 'http://pay.forwe.co/';
+        $alipay_config['apiurl']  = 'http://smpay.io/';
         
         $notify_url = $url . '/payment/pcexnotify';
         //需http://格式的完整路径，不能加?id=123这类自定义参数
